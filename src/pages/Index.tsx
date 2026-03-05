@@ -2,9 +2,8 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import AboutSection from "@/components/AboutSection";
+
 import StatsSection from "@/components/StatsSection";
-import ServicesSection from "@/components/ServicesSection";
 import ComparisonSection from "@/components/ComparisonSection";
 import ProcessSection from "@/components/ProcessSection";
 import FeaturesSection from "@/components/FeaturesSection";
@@ -12,8 +11,9 @@ import TeamSection from "@/components/TeamSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import IndustriesSection from "@/components/IndustriesSection";
 import FAQSection from "@/components/FAQSection";
+import CareersSection from "@/components/CareersSection";
 import ContactSection from "@/components/ContactSection";
-import ClosingSection from "@/components/ClosingSection";
+import TrustWeOverDeliverSection from "@/components/TrustWeOverDeliverSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -35,13 +35,9 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="bg-black">
-        <Navbar />
-        <HeroSection />
-      </div>
+      <Navbar />
+      <HeroSection />
       <StatsSection />
-      <AboutSection />
-      <ServicesSection />
       <ComparisonSection />
       <ProcessSection />
       <FeaturesSection />
@@ -49,8 +45,9 @@ const Index = () => {
       <TestimonialsSection />
       <IndustriesSection />
       <FAQSection />
+      <CareersSection />
       <ContactSection />
-      <ClosingSection />
+      <TrustWeOverDeliverSection />
       <Footer />
     </div>
   );

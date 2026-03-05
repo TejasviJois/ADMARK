@@ -10,15 +10,17 @@ const faqs = [
 ];
 
 const FAQSection = () => (
-  <section className="py-10 border-t border-border relative overflow-hidden">
+  <section className="py-20 sm:py-24 relative overflow-hidden">
+    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-red-600/[0.04] rounded-full blur-[130px] pointer-events-none" />
     <motion.div
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="container mx-auto px-4 max-w-3xl text-center space-y-4 mb-6"
+      className="container mx-auto px-4 max-w-3xl text-center space-y-4 mb-10"
     >
-      <span className="text-primary font-semibold text-sm tracking-wider uppercase">FAQs</span>
+      <span className="text-primary font-semibold text-xs tracking-[0.2em] uppercase">FAQs</span>
       <h2 className="text-3xl sm:text-4xl font-bold">Frequently Asked Questions</h2>
+      <div className="mx-auto w-12 h-1 rounded-full bg-gradient-to-r from-primary/80 to-primary/20" />
     </motion.div>
 
     <div className="container mx-auto px-4 max-w-3xl">

@@ -18,15 +18,18 @@ const prebuilt = [
 ];
 
 const ComparisonSection = () => (
-  <section className="py-10 border-t border-border relative overflow-hidden">
+  <section className="py-20 sm:py-24 relative overflow-hidden">
+    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-red-600/[0.06] rounded-full blur-[150px] pointer-events-none" />
+    <div className="absolute bottom-0 right-0 w-72 h-72 bg-red-500/[0.03] rounded-full blur-[100px] pointer-events-none" />
     <motion.div
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="container mx-auto px-4 text-center space-y-4 mb-6"
+      className="container mx-auto px-4 text-center space-y-4 mb-10"
     >
-      <span className="text-primary font-semibold text-sm tracking-wider uppercase">Choose Your Path</span>
+      <span className="text-primary font-semibold text-xs tracking-[0.2em] uppercase">Choose Your Path</span>
       <h2 className="text-3xl sm:text-4xl font-bold">Custom vs Pre-Built</h2>
+      <div className="mx-auto w-12 h-1 rounded-full bg-gradient-to-r from-primary/80 to-primary/20" />
     </motion.div>
 
     <div className="container mx-auto px-4">
@@ -37,7 +40,7 @@ const ComparisonSection = () => (
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           whileHover={{ scale: 1.02, y: -4, boxShadow: "0 0 50px hsl(0 80% 50% / 0.2)" }}
-          className="relative p-8 rounded-2xl border-2 border-primary bg-card shadow-glow cursor-default"
+          className="relative p-5 sm:p-8 rounded-2xl border-2 border-primary bg-card shadow-glow cursor-default"
         >
           <motion.span
             animate={{ opacity: [1, 0.8, 1] }}
@@ -68,6 +71,12 @@ const ComparisonSection = () => (
           <p className="text-xs text-muted-foreground mt-6">
             Best for: Startups, SaaS founders, Manufacturers, Scaling Brands
           </p>
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-2 mt-6 bg-gradient-primary text-primary-foreground px-6 py-3 rounded-xl font-semibold shadow-glow hover:opacity-90 transition-opacity text-sm"
+          >
+            Get a Quote <ArrowRight size={16} />
+          </a>
         </motion.div>
 
         <motion.div
@@ -76,7 +85,7 @@ const ComparisonSection = () => (
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           whileHover={{ scale: 1.02, y: -4 }}
-          className="p-8 rounded-2xl border border-border bg-card shadow-card cursor-default"
+          className="p-5 sm:p-8 rounded-2xl border border-border bg-card shadow-card cursor-default"
         >
           <h3 className="text-xl font-bold mb-1">Pre-Built Solutions</h3>
           <p className="text-xs text-muted-foreground mb-6">Accelerated Deployment</p>
@@ -109,7 +118,7 @@ const ComparisonSection = () => (
       >
         <Link
           to="/projects"
-          className="inline-flex items-center gap-2 bg-gradient-primary text-primary-foreground px-8 py-4 rounded-xl font-semibold shadow-glow hover:opacity-90 transition-opacity"
+          className="inline-flex items-center gap-2 bg-gradient-primary text-primary-foreground px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl font-semibold shadow-glow hover:opacity-90 transition-opacity text-sm sm:text-base"
         >
           View Our Projects & Testimonials <ArrowRight size={18} />
         </Link>

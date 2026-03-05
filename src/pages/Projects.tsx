@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
-import { ExternalLink, ArrowLeft } from "lucide-react";
+import { useEffect } from "react";
+import { motion } from "framer-motion";
+import { ExternalLink } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TrustWeOverDeliverSection from "@/components/TrustWeOverDeliverSection";
@@ -15,25 +16,36 @@ const testimonials = [
 ];
 
 const Projects = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+      <main className="pt-24 sm:pt-28 pb-12 sm:pb-16 relative overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-red-600/[0.06] rounded-full blur-[150px] pointer-events-none" />
+        <header className="container relative z-10 mx-auto px-4 text-center">
+            <p className="text-primary font-semibold text-xs uppercase tracking-[0.25em] mb-3 sm:mb-4">Portfolio</p>
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white max-w-3xl mx-auto">
+              Work & <span className="text-gradient">testimonials</span>
+            </h1>
+            <p className="mt-3 sm:mt-4 text-neutral-400 text-base sm:text-lg max-w-xl mx-auto">
+              Strategic builds and the voices behind them.
+            </p>
+          </header>
+        </main>
 
-      <main className="pt-28 pb-20">
-        <header className="container mx-auto px-4 mb-16">
-          <p className="text-primary font-semibold text-xs uppercase tracking-[0.25em] mb-4">Portfolio</p>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground max-w-3xl">
-            Work & <span className="text-gradient">testimonials</span>
-          </h1>
-          <p className="mt-4 text-muted-foreground text-lg max-w-xl">
-            Strategic builds and the voices behind them.
-          </p>
-        </header>
-
-        <section className="container mx-auto px-4 max-w-4xl space-y-8 mb-20">
-          <article className="rounded-2xl border border-border bg-card p-8 sm:p-12 transition-all duration-300 ease-out hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-primary/90 mb-4">Featured project</p>
-            <h2 className="text-2xl sm:text-3xl font-bold text-foreground tracking-tight mb-2">Dronark Aerospace</h2>
+      <main className="pt-8 sm:pt-12 pb-12 sm:pb-20">
+        <section className="container mx-auto px-4 max-w-4xl space-y-6 sm:space-y-8 mb-12 sm:mb-20">
+          <motion.article
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="rounded-xl sm:rounded-2xl border border-border bg-card p-5 sm:p-8 md:p-12 transition-all duration-300 ease-out hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-primary/90 mb-3 sm:mb-4">Featured project</p>
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground tracking-tight mb-2">Dronark Aerospace</h2>
             <a href="https://www.dronarkaerospace.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-6">
               dronarkaerospace.com <ExternalLink className="w-3.5 h-3.5" />
             </a>
@@ -49,11 +61,16 @@ const Projects = () => {
               ))}
             </ul>
             <p className="mt-6 text-sm font-medium text-foreground/90">Top founders don&apos;t hire agencies. They partner with conviction.</p>
-          </article>
+          </motion.article>
 
-          <article className="rounded-2xl border border-border bg-card p-8 sm:p-12 transition-all duration-300 ease-out hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-primary/90 mb-4">Featured technology partner</p>
-            <h2 className="text-2xl sm:text-3xl font-bold text-foreground tracking-tight mb-2">Kavach.World</h2>
+          <motion.article
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="rounded-xl sm:rounded-2xl border border-border bg-card p-5 sm:p-8 md:p-12 transition-all duration-300 ease-out hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-primary/90 mb-3 sm:mb-4">Featured technology partner</p>
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground tracking-tight mb-2">Kavach.World</h2>
             <a href="https://www.kavach.world/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-6">
               kavach.world <ExternalLink className="w-3.5 h-3.5" />
             </a>
@@ -69,24 +86,30 @@ const Projects = () => {
               ))}
             </ul>
             <p className="mt-6 text-sm font-medium text-foreground/90">Strategic software positioning.</p>
-          </article>
+          </motion.article>
         </section>
 
         {/* Three corporate pillars */}
         <section className="container mx-auto px-4 max-w-5xl mb-16">
           <div className="grid sm:grid-cols-3 gap-6">
-            <div className="rounded-xl border border-border bg-card/80 p-6 text-center transition-all duration-300 ease-out hover:border-primary/25 hover:-translate-y-0.5">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-primary/90 mb-2">Strategic</p>
-              <p className="text-sm text-muted-foreground">Data-driven decisions and clear roadmaps for every engagement.</p>
-            </div>
-            <div className="rounded-xl border border-border bg-card/80 p-6 text-center transition-all duration-300 ease-out hover:border-primary/25 hover:-translate-y-0.5">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-primary/90 mb-2">Reliable</p>
-              <p className="text-sm text-muted-foreground">On-time delivery and consistent quality across projects.</p>
-            </div>
-            <div className="rounded-xl border border-border bg-card/80 p-6 text-center transition-all duration-300 ease-out hover:border-primary/25 hover:-translate-y-0.5">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-primary/90 mb-2">Results-driven</p>
-              <p className="text-sm text-muted-foreground">Focused on outcomes that grow your business and brand.</p>
-            </div>
+            {[
+              { label: "Strategic", desc: "Data-driven decisions and clear roadmaps for every engagement." },
+              { label: "Reliable", desc: "On-time delivery and consistent quality across projects." },
+              { label: "Results-driven", desc: "Focused on outcomes that grow your business and brand." },
+            ].map((pillar, i) => (
+              <motion.div
+                key={pillar.label}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                whileHover={{ y: -4 }}
+                className="rounded-xl border border-border bg-card p-6 text-center transition-all duration-300 ease-out hover:border-primary/25 shadow-card"
+              >
+                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-primary/90 mb-2">{pillar.label}</p>
+                <p className="text-sm text-muted-foreground">{pillar.desc}</p>
+              </motion.div>
+            ))}
           </div>
         </section>
 
@@ -96,14 +119,19 @@ const Projects = () => {
         </div>
 
         <section className="container mx-auto px-4 max-w-5xl">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {testimonials.map((t) => (
-              <a
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+            {testimonials.map((t, i) => (
+              <motion.a
                 key={t.url}
                 href={t.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block p-6 rounded-xl border border-border bg-card text-foreground transition-all duration-300 ease-out hover:border-primary/25 hover:-translate-y-0.5 hover:shadow-md"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.06 }}
+                whileHover={{ y: -4 }}
+                className="block p-6 rounded-xl border border-border bg-card text-foreground transition-all duration-300 ease-out hover:border-primary/25 hover:shadow-md"
               >
                 <p className="text-sm font-semibold text-foreground mb-1.5">
                   {t.name}
@@ -113,21 +141,12 @@ const Projects = () => {
                 <span className="inline-flex items-center gap-1.5 text-xs font-medium text-primary">
                   View project <ExternalLink className="w-3 h-3" />
                 </span>
-              </a>
+              </motion.a>
             ))}
           </div>
         </section>
 
         <TrustWeOverDeliverSection />
-
-        <section className="container mx-auto px-4 mt-12 text-center">
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4" /> Back to home
-          </Link>
-        </section>
       </main>
       <Footer />
     </div>
