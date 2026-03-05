@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import logo from "@/assets/logo-admark.png";
+import logo from "@/assets/logo-admark.webp";
 
 const Footer = () => (
   <footer className="relative bg-black overflow-hidden">

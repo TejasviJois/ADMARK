@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import ceoImg from "@/assets/ceo TEAM MEMBERS.jpeg";
-import ctoImg from "@/assets/cto TEAM MEMBERS.png";
+import ceoImg from "@/assets/ceo TEAM MEMBERS.webp";
+import ctoImg from "@/assets/cto TEAM MEMBERS.webp";
 
 const team = [
   { name: "Tejasvi Jois", role: "Founder & CEO", bio: "Vision-driven strategist focused on scalable digital ecosystems.", image: ceoImg, pos: "object-top" as const },
@@ -53,7 +53,7 @@ const TeamSection = () => (
               className="w-16 h-16 sm:w-24 sm:h-24 rounded-full bg-secondary mx-auto mb-3 sm:mb-4 overflow-hidden ring-4 ring-transparent group-hover:ring-primary/30 transition-all duration-300"
               whileHover={{ scale: 1.05 }}
             >
-              <img src={p.image} alt={p.name} className={`w-full h-full object-cover ${p.pos}`} />
+              <img src={p.image} alt={p.name} loading="lazy" decoding="async" width={96} height={96} className={`w-full h-full object-cover ${p.pos}`} />
             </motion.div>
             <h3 className="font-bold text-sm sm:text-lg group-hover:text-primary transition-colors">{p.name}</h3>
             <p className="text-primary text-xs sm:text-sm font-medium mb-1 sm:mb-2">{p.role}</p>

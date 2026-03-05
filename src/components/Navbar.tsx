@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronRight, Layout, FolderKanban, Users, GraduationCap, MessageCircle } from "lucide-react";
-import logo from "@/assets/logo-admark.png";
+import logo from "@/assets/logo-admark.webp";
 
 const centerNavLinks = [
   { label: "About Us", href: "#about", icon: Users },
@@ -17,7 +17,6 @@ const rightPrimaryLabel = "Schedule a Demo";
 const mobileNavLinks = [
   ...centerNavLinks,
   { label: "Our Projects", href: "/projects", icon: FolderKanban },
-  { label: rightPrimaryLabel, href: rightPrimaryHref, icon: MessageCircle },
 ];
 
 const scrollToSection = (href: string) => {
